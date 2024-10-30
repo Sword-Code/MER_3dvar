@@ -21,3 +21,5 @@ export PNETCDF_LIB=$(pnetcdf-config --libdir)
 
 export PETSC_INC=/leonardo/prod/spack/05/install/0.21/linux-rhel8-icelake/oneapi-2023.2.0/petsc-3.20.1-h5bbyom3pca55vve7dz55xffwtgijzrb/include
 export PETSC_LIB=/leonardo/prod/spack/05/install/0.21/linux-rhel8-icelake/oneapi-2023.2.0/petsc-3.20.1-h5bbyom3pca55vve7dz55xffwtgijzrb/lib
+
+unset I_MPI_PMI_LIBRARY 

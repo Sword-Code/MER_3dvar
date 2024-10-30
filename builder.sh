@@ -8,10 +8,10 @@ MACHINE=leonardo
 DEBUG_3DVAR=
 # DEBUG_3DVAR=.dbg
 
-
 . compilers/machine_modules/${MACHINE}.${COMPILER}
 
 cd 3DVar
+cp ../compilers/machine_modules/${MACHINE}.${COMPILER} machine_module.sh
 INC_FILE=${ARCH}.${OS}.${COMPILER}${DEBUG_3DVAR}.inc
 cp $INC_FILE compiler.inc
 make clean
