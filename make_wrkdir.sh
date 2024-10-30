@@ -9,7 +9,7 @@ cd $wrkdir
 ln -sf "$dir_3dvar"/var_3d .
 
 cp ../files_wrkdir/var_3d_nml .
-cp ../files_wrkdir/DA__FREQ_1/satfloat.20150101.nml DA__FREQ_1
+cp ../files_wrkdir/DA__FREQ_1/satfloat.20150101-00:00:00.nml DA__FREQ_1
 
 
 
