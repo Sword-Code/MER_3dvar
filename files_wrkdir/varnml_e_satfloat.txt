@@ -1,1 +1,0 @@
-si trovano nella cartella namelist, bisogna modificare satfloat per assimilare solo sat 

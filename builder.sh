@@ -14,6 +14,7 @@ cd 3DVar
 cp ../compilers/machine_modules/${MACHINE}.${COMPILER} machine_module.sh
 INC_FILE=${ARCH}.${OS}.${COMPILER}${DEBUG_3DVAR}.inc
 cp $INC_FILE compiler.inc
+cp ../src/da_params.f90 .
 make clean
 gmake
 if [ $? -ne 0 ] ; then  echo  ERROR; exit 1 ; fi
