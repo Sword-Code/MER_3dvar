@@ -1,0 +1,2 @@
+questo contiene sia i misfit che gli errori da satellite. si trova in create_misfit.f90 ogstm.
+
