@@ -1,10 +1,12 @@
 #! /bin/bash
 
+downloads="$PWD"/../TEMP
+
 wrkdir=$PWD/wrkdir
 dir_3dvar=$PWD/3DVar
 
 mkdir -p "$wrkdir"/DA__FREQ_1
-
+mkdir -p "$wrkdir"/static_data
 
 cd $wrkdir
 
@@ -15,8 +17,17 @@ ln -sf "$dir_3dvar"/var_3d .
 cp ../files_wrkdir/var_3d_nml .
 cp ../files_wrkdir/DA__FREQ_1/satfloat.20150101-00:00:00.nml DA__FREQ_1
 
-# grid
-cp ../temp/grid1.nc .
+# download grid
+cp "$downloads"/grid1.nc .
+
+# download gradsal.nc
+cp "$downloads"/gradsal.nc .
+
+# download sat variance
+cp -r "$downloads"/SAT_VAR static_data/SAT_VAR
+
+# download EOFs
+cp -r "$downloads"/EOF static_data/EOF
 
 
 # create launcher.sh

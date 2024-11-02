@@ -10,6 +10,7 @@ DEBUG_3DVAR=
 
 . compilers/machine_modules/${MACHINE}.${COMPILER}
 
+echo compiling 3dvar
 cd 3DVar
 cp ../compilers/machine_modules/${MACHINE}.${COMPILER} machine_module.sh
 INC_FILE=${ARCH}.${OS}.${COMPILER}${DEBUG_3DVAR}.inc
@@ -18,5 +19,8 @@ cp ../src/da_params.f90 .
 make clean
 gmake
 if [ $? -ne 0 ] ; then  echo  ERROR; exit 1 ; fi
-export DA_INC=$PWD
-echo DA_INC= $DA_INC
+
+echo preparing DAVars.txt
+cd ..
+gmake
+if [ $? -ne 0 ] ; then  echo  ERROR; exit 1 ; fi
