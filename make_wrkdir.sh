@@ -29,6 +29,9 @@ cp -r "$downloads"/SAT_VAR static_data/SAT_VAR
 # download EOFs
 cp -r "$downloads"/EOF static_data/EOF
 
+# download correlation radious. Not needed with current namelist: var_3d_nml
+# cp -r "$downloads"/chl_rad_corr.nc .
+
 
 # create launcher.sh
 echo . "$dir_3dvar"/machine_module.sh > launcher.sh
