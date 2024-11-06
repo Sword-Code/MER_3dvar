@@ -6,7 +6,8 @@ wrkdir=$PWD/wrkdir
 dir_3dvar=$PWD/3DVar
 
 mkdir -p "$wrkdir"/DA__FREQ_1
-mkdir -p "$wrkdir"/static_data
+mkdir -p "$wrkdir"/static_data/SAT_VAR
+mkdir -p "$wrkdir"/static_data/EOF
 
 cd $wrkdir
 
@@ -24,13 +25,13 @@ cp "$downloads"/grid1.nc .
 cp "$downloads"/gradsal.nc .
 
 # download sat variance
-cp -r "$downloads"/SAT_VAR static_data/SAT_VAR
+cp "$downloads"/SAT_VAR/* static_data/SAT_VAR
 
 # download EOFs
-cp -r "$downloads"/EOF static_data/EOF
+cp "$downloads"/EOF/* static_data/EOF
 
 # download correlation radious. Not needed with current namelist: var_3d_nml
-# cp -r "$downloads"/chl_rad_corr.nc .
+# cp "$downloads"/chl_rad_corr.nc .
 
 
 # create launcher.sh
