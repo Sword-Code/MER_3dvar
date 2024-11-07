@@ -40,13 +40,9 @@
 !
 ! ---
 &covlst
-   neof_chl = 26
    neof_n3n = 4 !not used in MER
    neof_o2o = 4 !not used in MER
    neof_multi = 26 !not used in MER
    kmnit    = 60 !not used in MER
-   read_eof = .true. 
-   rcf_ntr  = 4
-   rcf_L    = 10000.
-   rcf_efc  = 5.0
+   read_eof = .true.
    
