@@ -1,9 +1,8 @@
 #! /bin/bash
 
-downloads="$PWD"/../TEMP
-
 wrkdir=$PWD/wrkdir
 dir_3dvar=$PWD/3DVar
+downloads="$PWD"/../TEMP
 
 mkdir -p "$wrkdir"/DA__FREQ_1
 mkdir -p "$wrkdir"/static_data/SAT_VAR
@@ -18,24 +17,28 @@ ln -sf "$dir_3dvar"/var_3d .
 cp ../files_wrkdir/var_3d_nml .
 cp ../files_wrkdir/DA__FREQ_1/satfloat.20150101-00:00:00.nml DA__FREQ_1
 
-# download grid
-cp "$downloads"/grid1.nc .
+if [ -d $downloads ]
+then
+    echo "downloading static files"
 
-# download gradsal.nc
-cp "$downloads"/gradsal.nc .
+    # download grid
+    cp "$downloads"/grid1.nc .
 
-# download sat variance
-cp "$downloads"/SAT_VAR/* static_data/SAT_VAR
+    # download gradsal.nc
+    cp "$downloads"/gradsal.nc .
 
-# download EOFs
-cp "$downloads"/EOF/* static_data/EOF
+    # download sat variance
+    cp "$downloads"/SAT_VAR/* static_data/SAT_VAR
 
-# download correlation radious. Not needed with current namelist: var_3d_nml
-# cp "$downloads"/chl_rad_corr.nc .
+    # download EOFs
+    cp "$downloads"/EOF/* static_data/EOF
 
+    # download correlation radious. Not needed with current namelist: var_3d_nml
+    # cp "$downloads"/chl_rad_corr.nc .
+fi
 
 # create launcher.sh
 echo . "$dir_3dvar"/machine_module.sh > launcher.sh
-echo ./var_3d >> launcher.sh
-#echo mpiexec -n 16 ./var_3d >> launcher.sh
+# echo ./var_3d >> launcher.sh
+echo mpiexec -n 8 ./var_3d >> launcher.sh
 
