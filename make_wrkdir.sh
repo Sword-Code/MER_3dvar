@@ -2,7 +2,7 @@
 
 wrkdir=$PWD/wrkdir
 dir_3dvar=$PWD/3DVar
-downloads="$PWD"/../TEMP
+downloads="$PWD"/TEMP
 
 mkdir -p "$wrkdir"/DA__FREQ_1
 mkdir -p "$wrkdir"/static_data/SAT_VAR
