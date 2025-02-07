@@ -2,7 +2,7 @@
 
 wrkdir=$PWD/wrkdir
 dir_3dvar=$PWD/3DVar
-downloads="$PWD"/TEMP
+static_files_dir="$PWD"/TEMP #leave empty if you don't have static files
 
 mkdir -p "$wrkdir"/DA__FREQ_1
 mkdir -p "$wrkdir"/static_data/SAT_VAR
@@ -17,24 +17,27 @@ ln -sf "$dir_3dvar"/var_3d .
 cp ../files_wrkdir/var_3d_nml .
 cp ../files_wrkdir/DA__FREQ_1/satfloat.20150101-00:00:00.nml DA__FREQ_1
 
-if [ -d $downloads ]
+if [ -d "$static_files_dir" ]
 then
-    echo "downloading static files"
+    echo "copying static files"
 
     # download grid
-    cp "$downloads"/grid1.nc .
+    cp "$static_files_dir"/grid1.nc .
 
     # download gradsal.nc
-    cp "$downloads"/gradsal.nc .
+    cp "$static_files_dir"/gradsal.nc .
 
     # download sat variance
-    cp "$downloads"/SAT_VAR/* static_data/SAT_VAR
+    cp "$static_files_dir"/SAT_VAR/* static_data/SAT_VAR
 
     # download EOFs
-    cp "$downloads"/EOF/* static_data/EOF
+    cp "$static_files_dir"/EOF/* static_data/EOF
 
     # download correlation radious. Not needed with current namelist: var_3d_nml
-    # cp "$downloads"/chl_rad_corr.nc .
+    # cp "$static_files_dir"/chl_rad_corr.nc .
+    
+else
+    echo "Warning: static_files_dir ('$static_files_dir') is not a directory. No static files will be copyed in the wrkdir ('$wrkdir')."
 fi
 
 # create launcher.sh
