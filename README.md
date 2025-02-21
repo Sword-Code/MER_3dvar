@@ -16,7 +16,7 @@ bash builder.sh
 
 Prepare working directory (`wrkdir` by default):
 ```
-bash make_wrkdir.sh
+python make_wrkdir.py
 ```
 
 Done.
@@ -36,7 +36,7 @@ Then proceede as for LEONARDO installation.
 The `builder.sh` file should be modified according to your machine.
 
 ## Installation notes:
-make_wrkdir.sh by default searches for a folder called TEMP, from which it copies the static files to the working directory. Otherwise, no static files are copied.
+make_wrkdir.py by default searches for a folder called `static_files`, from which it copies the static files to the working directory. Otherwise, no static files are copied.
 
 ## Run 3D-Var:
 From the working directory:
