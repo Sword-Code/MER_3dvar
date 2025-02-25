@@ -15,7 +15,17 @@ cd 3DVar
 cp ../compilers/machine_modules/${MACHINE}.${COMPILER} machine_module.sh
 INC_FILE=${ARCH}.${OS}.${COMPILER}${DEBUG_3DVAR}.inc
 cp $INC_FILE compiler.inc
-cp ../src/da_params.f90 .
+if [ -f "$1" ] 
+then
+    echo "cp $1 3DVar/da_params.f90"
+    cp $1 da_params.f90
+elif [ -f ../static_files/da_params.f90 ]
+    echo "cp ../static_files/da_params.f90 3DVar"
+    cp ../static_files/da_params.f90 .
+else
+    echo "cp ../src/da_params.f90 3DVar"
+    cp ../src/da_params.f90 .
+fi
 make clean
 gmake
 if [ $? -ne 0 ] ; then  echo  ERROR; exit 1 ; fi
