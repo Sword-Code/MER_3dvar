@@ -20,6 +20,7 @@ then
     echo "cp $1 3DVar/da_params.f90"
     cp $1 da_params.f90
 elif [ -f ../static_files/da_params.f90 ]
+then
     echo "cp ../static_files/da_params.f90 3DVar"
     cp ../static_files/da_params.f90 .
 else
