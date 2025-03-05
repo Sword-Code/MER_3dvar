@@ -50,7 +50,7 @@ else:
 
 # create launcher.sh
 with open(wrkdir/"launcher.sh", 'w') as f:
-    f.writelines([f"{dir_3dvar.absolute()/'machine_module.sh'}\n",
+    f.writelines([f". {dir_3dvar.absolute()/'machine_module.sh'}\n",
                   "mpiexec -n 8 ./var_3d"])
     
 
