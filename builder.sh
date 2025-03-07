@@ -15,7 +15,7 @@ echo compiling 3dvar
 cd 3DVar
 cp ../compilers/machine_modules/${MACHINE}.${COMPILER} machine_module.sh
 INC_FILE=${ARCH}.${OS}.${COMPILER}${DEBUG_3DVAR}.inc
-cp $INC_FILE compiler.inc
+cp ../compilers/$INC_FILE compiler.inc
 if [ -f "$1" ] 
 then
     echo "cp $1 3DVar/da_params.f90"
