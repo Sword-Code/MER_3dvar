@@ -1,4 +1,4 @@
-# MER_3dvar
+# 3dvar_builder
 This is an installer for the 3D-VAR code. It downloads and compile the 3D-VAR code. It also writes some output files usefull to pre and post processing tasks.
 
 ## Installation on CINECA's LEONARDO supercomputer
