@@ -2,7 +2,8 @@
 
 ARCH=x86_64
 OS=LINUX
-COMPILER=intel
+COMPILER=mpif90
+# COMPILER=intel
 MACHINE=leonardo
 
 DEBUG_3DVAR=
